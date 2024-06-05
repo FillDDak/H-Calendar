@@ -1,18 +1,35 @@
 # board
 
-## Project setup
+## 변경점
+```
+프로젝트 이름 board로 변경 (backend 상위 폴더가 프로젝트 전체 폴더)
+MySQL 스키마, 유저, 비밀번호 통일
+스키마 Charset utf8mb4로 설정
+```
+
+### 프론트엔드 폴더와 백엔드 폴더에서 터미널로 입력
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 프론트엔드 폴더에서 터미널로 입력
+```
+npm install axios
+```
+
+### ?백엔드 폴더에서 터미널로 입력
+```
+npm install cookie-parser
+```
+
+### 프론트엔드 실행
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 백엔드 실행
 ```
-npm run build
+npm run start
 ```
 
 ### Customize configuration
