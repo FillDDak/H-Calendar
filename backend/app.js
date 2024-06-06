@@ -50,27 +50,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
 
-// 예시 운동 데이터
-const exercises = [
-  { id: 1, name: '조깅', description: '유산소 운동으로 체력 향상에 좋습니다.' },
-  { id: 2, name: '푸시업', description: '근력 운동으로 상체 근육 강화에 좋습니다.' },
-  { id: 3, name: '요가', description: '유연성 향상과 마음의 평화를 줍니다.' }
-];
-
-// 운동 추천 라우트
-app.post('/api/exercise-recommendation', (req, res) => {
-  const { fitnessLevel, fitnessGoal, preferredExercise } = req.body;
-
-  // 간단한 추천 알고리즘 예시
-  const recommendedExercises = exercises.filter(exercise => {
-    if (preferredExercise === '유산소 운동' && exercise.name === '조깅') return true;
-    if (preferredExercise === '근력 운동' && exercise.name === '푸시업') return true;
-    if (preferredExercise === '요가' && exercise.name === '요가') return true;
-    return false;
-  });
-
-  res.json({ exercises: recommendedExercises });
-});
+// 운동 추천 라우트 파일 가져오기
+const exerciseRouter = require('./exerciseRecommendation'); // 수정된 경로
+app.use('/api', exerciseRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -19,7 +19,7 @@
                     <v-list-item>
                         <v-list-item-content>
                             <v-list-item-title>가입일</v-list-item-title>
-                            <v-list-item-subtitle>{{ user.joinDate }}</v-list-item-subtitle>
+                            <v-list-item-subtitle>{{ formattedJoinDate }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-list>
@@ -70,6 +70,7 @@
 
 <script>
 import axios from 'axios';
+import { format } from 'date-fns';
 
 export default {
     name: 'MyPage',
@@ -87,6 +88,12 @@ export default {
                 required: value => !!value || '필수 입력 항목입니다.',
                 match: value => value === this.newPassword || '새로운 비밀번호가 일치하지 않습니다.'
             }
+        }
+    },
+    computed: {
+        formattedJoinDate() {
+            if (!this.user.joinDate) return '';
+            return format(new Date(this.user.joinDate), 'yyyy년 MM월 dd일 HH시 mm분');
         }
     },
     created() {
