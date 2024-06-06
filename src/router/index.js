@@ -9,6 +9,7 @@ import modify from "@/views/modify.vue"
 import join from "@/views/join.vue"
 import login from "@/views/login.vue"
 import mypage from "@/views/mypage.vue"
+import ai from "@/views/ai.vue"
 
 const routes = [
   {
@@ -46,6 +47,10 @@ const routes = [
   {
     path: "/modify/:id",
     component: modify
+  },
+  {
+    path: "/ai",
+    component: ai
   }
 ]
 
