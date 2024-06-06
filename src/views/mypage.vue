@@ -147,7 +147,9 @@ export default {
                     if (response.data.result === "success") {
                         alert("회원 탈퇴가 성공적으로 완료되었습니다.");
                         this.deleteAccountDialog = false;
-                        this.$router.push("/login");
+                        this.$router.push("/login").then(() => {
+                            window.location.reload();
+                        });
                     } else {
                         alert(response.data.message);
                     }

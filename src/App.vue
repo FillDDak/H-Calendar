@@ -13,9 +13,9 @@
           </v-btn>
           <v-btn v-if="$store.state.loginUser" to="/list" variant="text">게시판</v-btn>
           <v-btn v-if="$store.state.loginUser" to="/calendar" variant="text">캘린더</v-btn>
+          <v-btn v-if="$store.state.loginUser" to="/ai" variant="text">운동 추천</v-btn>
         </v-layout>
       </div>
-
       <router-view />
     </v-main>
   </v-app>
