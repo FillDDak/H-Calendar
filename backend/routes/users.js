@@ -225,4 +225,41 @@ router.post("/get-events", async function (req, res) {
   }
 });
 
+router.post("/delete-event", async function (req, res) {
+  if (!req.session.user) {
+    return res.json({
+      result: "fail",
+      message: "로그인이 필요합니다."
+    });
+  }
+
+  const { date, title } = req.body;
+
+  if (!date || !title) {
+    return res.json({
+      result: "fail",
+      message: "날짜와 제목을 입력해주세요."
+    });
+  }
+
+  try {
+    await sequelize.models.event.destroy({
+      where: {
+        userId: req.session.user.no,
+        date: new Date(date),
+        title: title
+      }
+    });
+    res.json({
+      result: "success"
+    });
+  } catch (error) {
+    console.error('Error deleting event:', error);
+    res.json({
+      result: "fail",
+      message: "이벤트 삭제 중 오류가 발생했습니다."
+    });
+  }
+});
+
 module.exports = router;

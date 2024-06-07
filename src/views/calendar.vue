@@ -96,8 +96,17 @@ export default {
         }
       }
     },
-    deleteEvent(index) {
-      this.selectedDay.events.splice(index, 1);
+    async deleteEvent(index) {
+      try {
+        const title = this.selectedDay.events[index];
+        await axios.post('/user/delete-event', {
+          date: this.selectedDay.date,
+          title: title
+        });
+        this.selectedDay.events.splice(index, 1);
+      } catch (error) {
+        alert('이벤트 삭제 중 오류가 발생했습니다.');
+      }
     }
   }
 }

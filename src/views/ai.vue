@@ -153,6 +153,7 @@ export default {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
 }
 
 .v-dialog__content {
@@ -201,6 +202,7 @@ export default {
 }
 
 @keyframes fade {
+
     0%,
     100% {
         opacity: 1;
