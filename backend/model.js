@@ -1,5 +1,5 @@
 function model(Sequelize, connection) {
-    connection.define("board", {
+    const Board = connection.define("board", {
         no: {
             type: Sequelize.INTEGER,
             primaryKey: true,
@@ -22,7 +22,7 @@ function model(Sequelize, connection) {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW
         }
-    })
+    });
 
     const User = connection.define("user", {
         no: {
@@ -43,6 +43,30 @@ function model(Sequelize, connection) {
         joinDate: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW
+        }
+    });
+
+    const Event = connection.define("event", {
+        id: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        userId: {
+            type: Sequelize.INTEGER,
+            allowNull: false,
+            references: {
+                model: User,
+                key: 'no'
+            }
+        },
+        date: {
+            type: Sequelize.DATE,
+            allowNull: false
+        },
+        title: {
+            type: Sequelize.STRING,
+            allowNull: false
         }
     });
 

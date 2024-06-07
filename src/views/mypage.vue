@@ -111,7 +111,6 @@ export default {
                         this.user = response.data.user;
                     } else {
                         // 로그인 정보가 없을 경우 처리
-                        // 예를 들어 로그인 페이지로 이동하는 등의 작업을 수행할 수 있습니다.
                     }
                 })
                 .catch(error => {
