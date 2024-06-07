@@ -6,20 +6,22 @@
                 <v-list dense class="transparent-list">
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>아이디</v-list-item-title>
-                            <v-list-item-subtitle>{{ user.id }}</v-list-item-subtitle>
+                            <v-list-item-title class="list-title">아이디</v-list-item-title>
+                            <v-list-item-subtitle class="list-subtitle">{{ user.id }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
+                    <v-divider></v-divider>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>이름</v-list-item-title>
-                            <v-list-item-subtitle>{{ user.name }}</v-list-item-subtitle>
+                            <v-list-item-title class="list-title">이름</v-list-item-title>
+                            <v-list-item-subtitle class="list-subtitle">{{ user.name }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
+                    <v-divider></v-divider>
                     <v-list-item>
                         <v-list-item-content>
-                            <v-list-item-title>가입일</v-list-item-title>
-                            <v-list-item-subtitle>{{ formattedJoinDate }}</v-list-item-subtitle>
+                            <v-list-item-title class="list-title">가입일</v-list-item-title>
+                            <v-list-item-subtitle class="list-subtitle">{{ formattedJoinDate }}</v-list-item-subtitle>
                         </v-list-item-content>
                     </v-list-item>
                 </v-list>
@@ -238,12 +240,15 @@ export default {
     min-width: 120px;
 }
 
-.v-list-item-title {
-    font-weight: 500;
+.v-list-item-title.list-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
 }
 
-.v-list-item-subtitle {
-    color: rgba(0, 0, 0);
+.v-list-item-subtitle.list-subtitle {
+    font-size: 14px;
+    color: #555;
 }
 
 .v-divider {
