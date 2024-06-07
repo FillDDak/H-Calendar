@@ -46,29 +46,6 @@ function model(Sequelize, connection) {
         }
     });
 
-    // 이벤트 모델 정의
-    const Event = connection.define("event", {
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        date: {
-            type: Sequelize.DATE,
-        },
-        title: {
-            type: Sequelize.STRING,
-        },
-        userId: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: User, // 'users' 테이블을 참조
-                key: 'no' // 'id' 대신 'no'를 참조
-            }
-        }
-    });
-
-
     connection.sync({
         alter: true
     })

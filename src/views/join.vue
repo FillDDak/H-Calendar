@@ -96,7 +96,6 @@ export default {
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8);
     margin-bottom: 100px;
-    /* 배경 반투명 처리 */
 }
 
 .signup-card .v-card-title {

@@ -61,32 +61,4 @@ router.post("/board/modify", async function (req, res) {
   })
 })
 
-router.post("/event", async function (req, res) {
-  try {
-      var event = req.body;
-      console.log('Received event:', event); // 수신된 데이터를 로그로 출력
-      var createdEvent = await sequelize.models.event.create(event);
-      res.json(createdEvent);
-  } catch (error) {
-      console.error('Error in /event route:', error); // 오류 로그 출력
-      res.status(500).json({ error: error.message, stack: error.stack });
-  }
-});
-
-// 이벤트 조회 라우트
-router.get("/events/:date", async function (req, res) {
-  try {
-      var date = req.params.date;
-      var events = await sequelize.models.event.findAll({
-          where: {
-              date: date
-          }
-      });
-      res.json(events);
-  } catch (error) {
-      console.error('Error in /events/:date route:', error); // 오류 로그 출력
-      res.status(500).json({ error: error.message });
-  }
-});
-
 module.exports = router;
