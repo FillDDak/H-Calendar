@@ -10,10 +10,12 @@
                     <v-text-field v-model="user.height" :rules="[rules.required]" label="키 (cm)"></v-text-field>
                     <v-select v-model="user.fitnessLevel" :items="['초보자', '중급자', '고급자']" :rules="[rules.required]"
                         label="현재 체력 수준"></v-select>
-                    <v-select v-model="user.fitnessGoal" :items="['체중 감량', '근력 강화', '유연성 향상']" :rules="[rules.required]"
-                        label="운동 목표"></v-select>
-                    <v-select v-model="user.preferredExercise" :items="['유산소 운동', '근력 운동', '요가']" :rules="[rules.required]"
-                        label="선호하는 운동 종류"></v-select>
+                    <v-combobox v-model="user.fitnessGoal"
+                        :items="['체중 감량', '근력 강화', '유연성 향상', '체력 증진', '재활 및 회복', '정신 건강 개선']" 
+                        :rules="[rules.required]" label="운동 목표 (직접 입력 가능)" allow-creating></v-combobox>
+                    <v-combobox v-model="user.preferredExercise" 
+                        :items="['유산소 운동', '근력 운동', '유연성 및 균형 운동', '스포츠']"
+                        :rules="[rules.required]" label="선호하는 운동 종류 (직접 입력 가능)" allow-creating></v-combobox>
                 </v-form>
             </v-card-text>
             <v-card-actions class="justify-center">
@@ -21,8 +23,8 @@
             </v-card-actions>
         </v-card>
 
-        <v-dialog v-model="recommendationDialog" :max-width="'90vw'" :max-height="'90vh'">
-            <v-card>
+        <v-dialog v-model="recommendationDialog" :width="'600px'" :height="'80vh'">
+            <v-card class="tall-dialog">
                 <v-card-title class="text-center primary--text">추천 운동</v-card-title>
                 <v-card-text style="white-space: pre-wrap;">
                     {{ recommendedExercises.join('\n') }}
@@ -104,7 +106,7 @@ export default {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.9); /* 배경 반투명 처리 */
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .v-dialog__content {
@@ -114,5 +116,9 @@ export default {
 .v-card-text {
     max-height: 70vh;
     overflow-y: auto;
+}
+
+.tall-dialog {
+    height: 80vh;
 }
 </style>

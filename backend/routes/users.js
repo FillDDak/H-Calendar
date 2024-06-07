@@ -20,7 +20,7 @@ router.post("/join", async function (req, res) {
       id: req.body.id
     }
   });
-  if (checkUser) {    // 이미 가입된 아이디가 있으면
+  if (checkUser) { // 이미 가입된 아이디가 있으면
     res.json({
       result: "fail",
       message: "이미 가입된 아이디입니다."
@@ -55,7 +55,7 @@ router.post("/login", async function (req, res) {
     });
     return;
   }
-  // TODO: 세션에 로그인 정보 저장
+  // 세션에 로그인 정보 저장
   req.session.user = checkUser;
 
   res.json({

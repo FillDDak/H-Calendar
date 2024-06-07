@@ -51,7 +51,7 @@ app.use('/', indexRouter);
 app.use('/user', usersRouter);
 
 // 운동 추천 라우트 파일 가져오기
-const exerciseRouter = require('./exerciseRecommendation'); // 수정된 경로
+const exerciseRouter = require('./exerciseRecommendation');
 app.use('/api', exerciseRouter);
 
 // catch 404 and forward to error handler

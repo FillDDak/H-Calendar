@@ -3,7 +3,7 @@
         <v-card class="mypage-card">
             <v-card-title class="text-center primary--text">마이페이지</v-card-title>
             <v-card-text>
-                <v-list dense>
+                <v-list dense class="transparent-list">
                     <v-list-item>
                         <v-list-item-content>
                             <v-list-item-title>아이디</v-list-item-title>
@@ -33,7 +33,7 @@
 
         <!-- 비밀번호 변경 다이얼로그 -->
         <v-dialog v-model="changePasswordDialog" max-width="400">
-            <v-card class="dialog-card">
+            <v-card class="password-dialog-card">
                 <v-card-title class="text-center primary--text">비밀번호 변경</v-card-title>
                 <v-card-text>
                     <v-form ref="changePasswordForm" v-model="valid">
@@ -54,10 +54,10 @@
 
         <!-- 회원 탈퇴 다이얼로그 -->
         <v-dialog v-model="deleteAccountDialog" max-width="400">
-            <v-card class="dialog-card">
+            <v-card class="delete-dialog-card">
                 <v-card-title class="text-center error--text">회원 탈퇴</v-card-title>
                 <v-card-text>
-                    <p>정말로 회원 탈퇴를 하시겠습니까? 이 작업은 되돌릴 수 없습니다.</p>
+                    <p>정말로 회원 탈퇴를 하시겠습니까?<br><br>이 작업은 되돌릴 수 없습니다.</p>
                 </v-card-text>
                 <v-card-actions class="justify-center">
                     <v-btn color="error" @click="deleteAccount">탈퇴</v-btn>
@@ -188,8 +188,33 @@ export default {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.8); /* 배경 반투명 처리 */
     margin-bottom: 100px;
+}
+
+.password-dialog-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255); /* 배경 반투명 처리 */
+    margin-bottom: 100px;
+}
+
+.delete-dialog-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255); /* 배경 반투명 처리 */
+    margin-bottom: 100px;
+}
+
+.transparent-list {
+    background-color: rgba(255, 255, 255, 0.9); /* 배경 반투명 처리 */
+    border-radius: 10px;
 }
 
 .error--text {
