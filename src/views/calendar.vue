@@ -4,14 +4,14 @@
       <template v-if="selectedDay">
         <v-list-item class="date-item">
           <v-list-item-content>
-            <v-list-item-title class="date-title">{{ selectedDay.date }}</v-list-item-title>
+            <v-list-item-title class="date-title">{{ selectedDay.formattedDate }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider></v-divider>
         <v-list-item>
           <v-list-item-content>
             <v-text-field v-model="newEventTitle" label="운동 기록" outlined dense color="primary"></v-text-field>
-            <v-btn @click="saveEvent" color="primary" class="mt-3">저장</v-btn>
+            <v-btn @click="handleSaveEvent" color="primary" class="mt-3">저장</v-btn>
             <v-list>
               <v-list-item v-for="(event, index) in selectedDay.events" :key="index" class="event-item">
                 <v-list-item-content>{{ event }}</v-list-item-content>
@@ -39,8 +39,11 @@
     </v-row>
   </v-container>
 </template>
-  
+
 <script>
+import { mapActions } from 'vuex';
+import axios from 'axios';
+
 export default {
   name: 'Calendar',
   data() {
@@ -53,17 +56,44 @@ export default {
     }
   },
   methods: {
-    dayClicked(day) {
+    ...mapActions(['saveEvent']),
+    async dayClicked(day) {
+      const localDate = new Date(day.date.getTime() - day.date.getTimezoneOffset() * 60000);
       this.selectedDay = {
-        date: day.date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }),
+        date: day.date.toISOString(),
+        formattedDate: localDate.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }),
         events: []
       };
       this.drawer = true;
+      await this.loadEvents();
     },
-    saveEvent() {
+    async loadEvents() {
+      try {
+        const response = await axios.post('/user/get-events', {
+          date: this.selectedDay.date
+        });
+        if (response.data.result === 'success') {
+          this.selectedDay.events = response.data.events;
+        } else {
+          alert(response.data.message);
+        }
+      } catch (error) {
+        alert('이벤트를 불러오는데 실패했습니다.');
+      }
+    },
+    async handleSaveEvent() {
       if (this.newEventTitle) {
-        this.selectedDay.events.push(this.newEventTitle);
-        this.newEventTitle = '';
+        try {
+          console.log(`Saving event with date: ${this.selectedDay.date} and title: ${this.newEventTitle}`);
+          await this.saveEvent({
+            date: this.selectedDay.date,
+            title: this.newEventTitle
+          });
+          this.selectedDay.events.push(this.newEventTitle);
+          this.newEventTitle = '';
+        } catch (error) {
+          alert(error.message);
+        }
       }
     },
     deleteEvent(index) {
@@ -72,7 +102,7 @@ export default {
   }
 }
 </script>
-  
+
 <style scoped>
 .calendar-container {
   height: 80vh;
