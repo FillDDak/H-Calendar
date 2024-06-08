@@ -4,11 +4,11 @@
             <v-card-title class="text-center primary--text">운동 추천</v-card-title>
             <v-card-text>
                 <v-form ref="form" v-model="valid">
-                    <v-text-field v-model="user.age" :rules="[rules.required, rules.max123]" label="나이"></v-text-field>
+                    <v-text-field v-model="user.age" :rules="[rules.required, rules.maxage]" label="나이"></v-text-field>
                     <v-select v-model="user.gender" :items="['남성', '여성']" :rules="[rules.required]" label="성별"></v-select>
-                    <v-text-field v-model="user.weight" :rules="[rules.required, rules.max561]"
+                    <v-text-field v-model="user.weight" :rules="[rules.required, rules.maxweight]"
                         label="체중 (kg)"></v-text-field>
-                    <v-text-field v-model="user.height" :rules="[rules.required, rules.max252]"
+                    <v-text-field v-model="user.height" :rules="[rules.required, rules.maxheight]"
                         label="키 (cm)"></v-text-field>
                     <v-select v-model="user.fitnessLevel" :items="['초보자', '중급자', '고급자']" :rules="[rules.required]"
                         label="현재 체력 수준"></v-select>
@@ -73,9 +73,9 @@ export default {
             dotCount: 1,
             rules: {
                 required: value => !!value || '필수 입력 항목입니다.',
-                max123: value => (value <= 123) || '값을 제대로 입력하세요.',
-                max561: value => (value <= 561) || '값을 제대로 입력하세요.',
-                max252: value => (value <= 252) || '값을 제대로 입력하세요.'
+                maxage: value => (value <= 123) || '값을 제대로 입력하세요.',
+                maxweight: value => (value <= 561) || '값을 제대로 입력하세요.',
+                maxheight: value => (value <= 252) || '값을 제대로 입력하세요.'
             },
             loadingTips: [
                 "운동 전에는 항상 충분한 준비 운동을 해주세요.",
@@ -111,7 +111,7 @@ export default {
         },
         async getRandomImage() {
             try {
-                const response = await axios.get('https://source.unsplash.com/random/1920x1080');
+                const response = await axios.get('https://picsum.photos/1920/1080');
                 this.backgroundImage = response.request.responseURL;
             } catch (error) {
                 console.error('Error fetching random image:', error);

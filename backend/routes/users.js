@@ -152,76 +152,76 @@ router.post("/delete", async function (req, res) {
 
 router.post("/save-event", async function (req, res) {
   if (!req.session.user) {
-      return res.json({
-          result: "fail",
-          message: "로그인이 필요합니다."
-      });
+    return res.json({
+      result: "fail",
+      message: "로그인이 필요합니다."
+    });
   }
 
   const { date, title } = req.body;
 
   if (!date || !title) {
-      return res.json({
-          result: "fail",
-          message: "날짜와 제목을 입력해주세요."
-      });
+    return res.json({
+      result: "fail",
+      message: "날짜와 제목을 입력해주세요."
+    });
   }
 
   console.log(`Saving event: ${title} on ${date} for user ${req.session.user.no}`);
 
   try {
-      await sequelize.models.event.create({
-          userId: req.session.user.no,
-          date: new Date(date),
-          title: title
-      });
-      res.json({
-          result: "success"
-      });
+    await sequelize.models.event.create({
+      userId: req.session.user.no,
+      date: new Date(date),
+      title: title
+    });
+    res.json({
+      result: "success"
+    });
   } catch (error) {
-      console.error('Error saving event:', error);
-      res.json({
-          result: "fail",
-          message: "이벤트 저장 중 오류가 발생했습니다."
-      });
+    console.error('Error saving event:', error);
+    res.json({
+      result: "fail",
+      message: "이벤트 저장 중 오류가 발생했습니다."
+    });
   }
 });
 
 router.post("/get-events", async function (req, res) {
   if (!req.session.user) {
-      return res.json({
-          result: "fail",
-          message: "로그인이 필요합니다."
-      });
+    return res.json({
+      result: "fail",
+      message: "로그인이 필요합니다."
+    });
   }
 
   const { date } = req.body;
 
   if (!date) {
-      return res.json({
-          result: "fail",
-          message: "날짜를 입력해주세요."
-      });
+    return res.json({
+      result: "fail",
+      message: "날짜를 입력해주세요."
+    });
   }
 
   try {
-      const events = await sequelize.models.event.findAll({
-          where: {
-              userId: req.session.user.no,
-              date: new Date(date)
-          }
-      });
+    const events = await sequelize.models.event.findAll({
+      where: {
+        userId: req.session.user.no,
+        date: new Date(date)
+      }
+    });
 
-      res.json({
-          result: "success",
-          events: events.map(event => event.title)
-      });
+    res.json({
+      result: "success",
+      events: events.map(event => event.title)
+    });
   } catch (error) {
-      console.error('Error getting events:', error);
-      res.json({
-          result: "fail",
-          message: "이벤트를 불러오는 중 오류가 발생했습니다."
-      });
+    console.error('Error getting events:', error);
+    res.json({
+      result: "fail",
+      message: "이벤트를 불러오는 중 오류가 발생했습니다."
+    });
   }
 });
 

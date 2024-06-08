@@ -119,7 +119,7 @@ export default {
         },
         async getRandomImage() {
             try {
-                const response = await axios.get('https://source.unsplash.com/random/1920x1080');
+                const response = await axios.get('https://picsum.photos/1920/1080');
                 this.backgroundImage = response.request.responseURL;
             } catch (error) {
                 console.error('Error fetching random image:', error);
