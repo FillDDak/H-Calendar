@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const apiKey = 'REMOVED';
+const apiKey = '';
 const apiEndpoint = 'https://api.openai.com/v1/chat/completions';
 
 router.post('/exercise-recommendation', async (req, res) => {
