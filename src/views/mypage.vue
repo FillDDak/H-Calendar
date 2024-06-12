@@ -104,13 +104,11 @@ export default {
     },
     methods: {
         fetchUserInfo() {
-            // 로그인된 사용자 정보를 서버로부터 가져오는 메서드
             this.$axios.post("/user/info")
                 .then(response => {
                     if (response.data.result === "success") {
                         this.user = response.data.user;
                     } else {
-                        // 로그인 정보가 없을 경우 처리
                     }
                 })
                 .catch(error => {
@@ -189,7 +187,8 @@ export default {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8); /* 배경 반투명 처리 */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* 배경 반투명 처리 */
     margin-bottom: 100px;
 }
 
@@ -199,7 +198,8 @@ export default {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255); /* 배경 반투명 처리 */
+    background-color: rgba(255, 255, 255);
+    /* 배경 반투명 처리 */
     margin-bottom: 100px;
 }
 
@@ -209,12 +209,14 @@ export default {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255); /* 배경 반투명 처리 */
+    background-color: rgba(255, 255, 255);
+    /* 배경 반투명 처리 */
     margin-bottom: 100px;
 }
 
 .transparent-list {
-    background-color: rgba(255, 255, 255, 0.9); /* 배경 반투명 처리 */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* 배경 반투명 처리 */
     border-radius: 10px;
 }
 
@@ -252,5 +254,4 @@ export default {
 
 .v-divider {
     margin: 16px 0;
-}
-</style>
+}</style>

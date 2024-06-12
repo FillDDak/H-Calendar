@@ -1,5 +1,5 @@
 <template>
-  <v-container class="calendar-container">
+  <v-container class="calendar-container" :style="{ backgroundImage: 'url(' + backgroundImage + ')' }">
     <v-navigation-drawer v-model="drawer" app temporary left width="400">
       <template v-if="selectedDay">
         <v-list-item class="date-item">
@@ -10,7 +10,7 @@
         <v-divider></v-divider>
         <v-list-item>
           <v-list-item-content>
-            <v-text-field v-model="newEventTitle" label="운동 기록" outlined dense color="primary"></v-text-field>
+            <v-text-field v-model="newEventTitle" label="기록" outlined dense color="primary"></v-text-field>
             <v-btn @click="handleSaveEvent" color="primary" class="mt-3">저장</v-btn>
             <v-list>
               <v-list-item v-for="(event, index) in selectedDay.events" :key="index" class="event-item">
@@ -28,10 +28,11 @@
     </v-navigation-drawer>
 
     <v-row justify="center">
-      <v-col cols="12" md="6" lg="2">
+      <v-col cols="12" md="8" lg="6">
         <v-card class="calendar-card">
-          <v-card-title class="headline">캘린더 작성</v-card-title>
-          <v-card-text>
+          <v-card-title class="headline center">캘린더 작성</v-card-title>
+          <v-card-text class="calendar-text">
+            <p class="instruction-text">날짜를 클릭해 일상과 운동 기록을 작성하세요.</p>
             <vc-calendar v-model="focus" is-expanded :events="events" @dayclick="dayClicked"></vc-calendar>
           </v-card-text>
         </v-card>
@@ -52,8 +53,12 @@ export default {
       focus: new Date(),
       events: [],
       selectedDay: null,
-      newEventTitle: ''
-    }
+      newEventTitle: '',
+      backgroundImage: ''
+    };
+  },
+  created() {
+    this.getRandomImage();
   },
   methods: {
     ...mapActions(['saveEvent']),
@@ -107,17 +112,27 @@ export default {
       } catch (error) {
         alert('이벤트 삭제 중 오류가 발생했습니다.');
       }
+    },
+    async getRandomImage() {
+      try {
+        const response = await axios.get('https://picsum.photos/1920/1080');
+        this.backgroundImage = response.request.responseURL;
+      } catch (error) {
+        console.error('Error fetching random image:', error);
+      }
     }
   }
-}
+};
 </script>
 
 <style scoped>
 .calendar-container {
-  height: 80vh;
+  height: 93.8vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .date-item {
@@ -131,13 +146,30 @@ export default {
 }
 
 .calendar-card {
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .headline {
   font-size: 24px;
   font-weight: bold;
   color: #333;
+  text-align: center;
+  width: 100%;
+}
+
+.instruction-text {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #666;
+  text-align: center;
+}
+
+.calendar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .event-item {

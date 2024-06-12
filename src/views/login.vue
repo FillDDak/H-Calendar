@@ -80,7 +80,7 @@ export default {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 100px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   /* 배경 반투명 처리 */
 }
 

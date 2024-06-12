@@ -3,9 +3,9 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-// ChatGPT API 설정
+// ChatGPT API 설정, backend/.env에 KEY 있음
 const apiKey = process.env.CHATGPT_API_KEY;
-const apiEndpoint = 'https://api.openai.com/v1/chat/completions'; // 최신 엔드포인트
+const apiEndpoint = 'https://api.openai.com/v1/chat/completions';
 
 router.post('/exercise-recommendation', async (req, res) => {
     const { age, gender, weight, height, fitnessLevel, fitnessGoal, preferredExercise } = req.body;
