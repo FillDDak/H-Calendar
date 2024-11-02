@@ -11,16 +11,6 @@ MySQL 스키마, 유저, 비밀번호 통일
 npm install
 ```
 
-### ?프론트엔드 폴더에서 터미널로 입력
-```
-npm install axios
-```
-
-### ?백엔드 폴더에서 터미널로 입력
-```
-npm install cookie-parser
-```
-
 ### 프론트엔드 실행
 ```
 npm run serve
