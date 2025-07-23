@@ -21,17 +21,17 @@ npm run serve
 npm run start
 ```
 
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_1" src="https://github.com/user-attachments/assets/5d84eb47-9e27-4440-a4a1-a26c3692634b" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_2" src="https://github.com/user-attachments/assets/75778905-60bf-4250-ab21-cb52eba15786" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_3" src="https://github.com/user-attachments/assets/54060094-2919-4d1b-abef-551c2af4a2de" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_4" src="https://github.com/user-attachments/assets/9e08c56c-c999-435f-b67f-8e25b9c5acba" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_5" src="https://github.com/user-attachments/assets/eab7537f-b5bf-4985-8aa8-eb5ef9e6af97" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_6" src="https://github.com/user-attachments/assets/723596b7-949b-4786-8456-42c815a5d4db" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_7" src="https://github.com/user-attachments/assets/33bfdb17-be06-4ec7-8dac-018b375174db" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_8" src="https://github.com/user-attachments/assets/d4a7fa3b-b176-409e-a2ca-07930880850d" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_9" src="https://github.com/user-attachments/assets/b5e88ae5-45e3-4372-9a30-958cdb9af755" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_10" src="https://github.com/user-attachments/assets/2cd87165-6802-45a7-9006-cfa74fa054fe" />
-<img width="1440" height="810" alt="2024541012 최현규 졸업 프로젝트 중간고사_11" src="https://github.com/user-attachments/assets/368c1d39-4d92-488e-8a0a-17d460ff6df2" />
+<img width="1920" height="1080" alt="슬라이드1" src="https://github.com/user-attachments/assets/ebdbd0a8-022e-4ae9-959b-8dbef5d4b470" />
+<img width="1920" height="1080" alt="슬라이드2" src="https://github.com/user-attachments/assets/9450f90a-32a6-488d-a223-8d691b4fdfed" />
+<img width="1920" height="1080" alt="슬라이드3" src="https://github.com/user-attachments/assets/c88b3609-b309-454e-98fe-52be9248af69" />
+<img width="1920" height="1080" alt="슬라이드4" src="https://github.com/user-attachments/assets/02102d77-1205-49e5-aeba-118986d88a79" />
+<img width="1920" height="1080" alt="슬라이드5" src="https://github.com/user-attachments/assets/32873d8d-0c78-4118-8260-f4a3ebce3054" />
+<img width="1920" height="1080" alt="슬라이드6" src="https://github.com/user-attachments/assets/9ecb3a11-0555-48bf-9d1f-e72fce81ac42" />
+<img width="1920" height="1080" alt="슬라이드7" src="https://github.com/user-attachments/assets/2d04801f-60c5-4d1b-bdf2-6dcb145a74ed" />
+<img width="1920" height="1080" alt="슬라이드8" src="https://github.com/user-attachments/assets/30fa6a55-5320-453d-aef6-7404d5d4de54" />
+<img width="1920" height="1080" alt="슬라이드9" src="https://github.com/user-attachments/assets/6f9077f8-cc78-49c9-ac1e-8f2f3a74f63d" />
+<img width="1920" height="1080" alt="슬라이드10" src="https://github.com/user-attachments/assets/9d6e94d0-d0b9-4729-b354-1aa1aa5b8838" />
+<img width="1920" height="1080" alt="슬라이드11" src="https://github.com/user-attachments/assets/6ef48665-47c3-465f-a6a9-6a636be09eb3" />
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
