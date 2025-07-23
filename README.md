@@ -21,17 +21,21 @@ npm run serve
 npm run start
 ```
 
-<img width="1920" height="1080" alt="슬라이드1" src="https://github.com/user-attachments/assets/ebdbd0a8-022e-4ae9-959b-8dbef5d4b470" />
-<img width="1920" height="1080" alt="슬라이드2" src="https://github.com/user-attachments/assets/9450f90a-32a6-488d-a223-8d691b4fdfed" />
-<img width="1920" height="1080" alt="슬라이드3" src="https://github.com/user-attachments/assets/c88b3609-b309-454e-98fe-52be9248af69" />
-<img width="1920" height="1080" alt="슬라이드4" src="https://github.com/user-attachments/assets/02102d77-1205-49e5-aeba-118986d88a79" />
-<img width="1920" height="1080" alt="슬라이드5" src="https://github.com/user-attachments/assets/32873d8d-0c78-4118-8260-f4a3ebce3054" />
-<img width="1920" height="1080" alt="슬라이드6" src="https://github.com/user-attachments/assets/9ecb3a11-0555-48bf-9d1f-e72fce81ac42" />
-<img width="1920" height="1080" alt="슬라이드7" src="https://github.com/user-attachments/assets/2d04801f-60c5-4d1b-bdf2-6dcb145a74ed" />
-<img width="1920" height="1080" alt="슬라이드8" src="https://github.com/user-attachments/assets/30fa6a55-5320-453d-aef6-7404d5d4de54" />
-<img width="1920" height="1080" alt="슬라이드9" src="https://github.com/user-attachments/assets/6f9077f8-cc78-49c9-ac1e-8f2f3a74f63d" />
-<img width="1920" height="1080" alt="슬라이드10" src="https://github.com/user-attachments/assets/9d6e94d0-d0b9-4729-b354-1aa1aa5b8838" />
-<img width="1920" height="1080" alt="슬라이드11" src="https://github.com/user-attachments/assets/6ef48665-47c3-465f-a6a9-6a636be09eb3" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_1" src="https://github.com/user-attachments/assets/c7c618bb-3a1c-442f-ae3d-2b1f74894ac2" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_2" src="https://github.com/user-attachments/assets/8a5cfe12-159d-4f0e-95f5-ad171d8e96ec" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_3" src="https://github.com/user-attachments/assets/c3f0a767-2a1a-4f71-af21-462d59f5f899" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_4" src="https://github.com/user-attachments/assets/842f27f9-867b-4388-8700-eebe55dc319b" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_5" src="https://github.com/user-attachments/assets/91144479-353c-4203-a99c-8120fa93dadc" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_6" src="https://github.com/user-attachments/assets/a397c5bf-2a9d-4fa4-b518-09682ac59535" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_7" src="https://github.com/user-attachments/assets/6e588a83-78a0-42d7-bb6d-bc858db9b332" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_8" src="https://github.com/user-attachments/assets/34e5da14-913d-427f-b7db-0f4cd0b7d323" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_9" src="https://github.com/user-attachments/assets/3728d0f8-de35-43f8-b3f3-5a62834d8eb4" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_10" src="https://github.com/user-attachments/assets/15ce1cd6-d8fd-49cf-a1ca-186b35438d8a" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_11" src="https://github.com/user-attachments/assets/02bc3b23-a55e-4ec9-a211-3908449d6668" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_12" src="https://github.com/user-attachments/assets/d46c7908-88e1-4d54-a5dd-9c6d57e24718" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_13" src="https://github.com/user-attachments/assets/31a2d868-c831-48e3-933e-44482a454a6a" />
+<img width="1440" height="810" alt="소프트웨어 공학 기말 프로젝트 PPT_14" src="https://github.com/user-attachments/assets/f474faf7-fbc6-4bdc-8226-88d69ab6748c" />
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
