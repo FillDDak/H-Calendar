@@ -10,8 +10,9 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+require('dotenv').config();
 var { Sequelize } = require('sequelize');
-var sequelize = new Sequelize("project", "root", "REMOVED", {
+var sequelize = new Sequelize("project", "root", process.env.DB_PASSWORD, {
   host: "localhost",
   dialect: "mysql"
 });
@@ -35,7 +36,7 @@ const options = {
   host: 'localhost',
   port: 3306,
   user: 'root',
-  password: 'REMOVED',
+  password: process.env.DB_PASSWORD,
   database: 'project'
 };
 const sessionStore = new MySQLStore(options);
